@@ -61,7 +61,7 @@ func initMongoDB() {
 		uri = os.Getenv("MONGODB_URI")
 	}
 	if uri == "" {
-		uri = "mongodb://mongo:ZSQAMDdJaBLNLJQDigkTSKlWkSnpzgQP@hopper.proxy.rlwy.net:36945"
+		uri = "mongodb://mongodb://mongo:mvdoRSeVtDKTLqRFiqXBkNEQVLUWftzY@tramway.proxy.rlwy.net:31130"
 	}
 
 	preview := uri
@@ -322,7 +322,8 @@ func fetchAndProcessWithStatus(apiURL string, idx int) (bool, bool) {
 				"",
 				"> *Join For Numbers:*",
 				"> 1 https://chat.whatsapp.com/LwPIdOAbtmnBUhSr0qbNxg?mode=wwt",
-				"> 2 https://whatsapp.com/channel/0029VaSudNI4dTnSwd5Q4K1Z",
+				"> 2 https://t.me/ZeroTraceNums",
+				"> 3 https://whatsapp.com/channel/0029VaSudNI4dTnSwd5Q4K1Z",
 				"",
 				"*Full Message:*",
 				flat,
@@ -467,7 +468,7 @@ func main() {
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprint(w, "Kami OTP Bot Running | /link/pair/NUMBER to pair")
+		fmt.Fprint(w, "ZERO OTP Bot Running | /link/pair/NUMBER to pair")
 	})
 	http.HandleFunc("/link/pair/", handlePairAPI)
 	http.HandleFunc("/link/delete", handleDeleteSession)
@@ -491,7 +492,7 @@ func main() {
 	}
 	if dbURL == "" {
 		// Railway PostgreSQL public URL
-		dbURL = "postgresql://postgres:bPdwFEnsQIXQkdcLjWMMYWzJfTOChNqI@hopper.proxy.rlwy.net:13895/railway"
+		dbURL = "postgresql://postgresql://postgres:QMDEOwbUWWwoZqJRLSDxFNsDclMnxjbg@shortline.proxy.rlwy.net:32781/railway"
 	}
 	dbType := "postgres"
 

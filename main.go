@@ -77,7 +77,7 @@ func initMongoDB() {
 	if err != nil {
 		panic(fmt.Sprintf("MongoDB failed: %v", err))
 	}
-	mongoColl = mc.Database("kami_otp_db").Collection("sent_otps")
+	mongoColl = mc.Database("Zero_otp_db").Collection("sent_otps")
 	_, _ = mongoColl.Indexes().CreateOne(context.Background(), mongo.IndexModel{
 		Keys:    bson.M{"msg_id": 1},
 		Options: options.Index().SetUnique(true),
@@ -321,9 +321,8 @@ func fetchAndProcessWithStatus(apiURL string, idx int) (bool, bool) {
 				"   *OTP:* *" + otp + "*",
 				"",
 				"> *Join For Numbers:*",
-				"> 1 https://chat.whatsapp.com/LwPIdOAbtmnBUhSr0qbNxg?mode=wwt",
-				"> 2 https://t.me/ZeroTraceNums",
-				"> 3 https://whatsapp.com/channel/0029VaSudNI4dTnSwd5Q4K1Z",
+				"> 1 https://chat.whatsapp.com/LwPIdOAbtmnBUhSr0qbNxg?mode=wwt",				
+				"> 2 https://whatsapp.com/channel/0029VaSudNI4dTnSwd5Q4K1Z",
 				"",
 				"*Full Message:*",
 				flat,
@@ -460,7 +459,7 @@ func handleDeleteSession(w http.ResponseWriter, r *http.Request) {
 // ── MAIN ──────────────────────────────────────────────────────────────────────
 
 func main() {
-	fmt.Println("Kami OTP Bot starting...")
+	fmt.Println("Zero OTP Bot starting...")
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -501,7 +500,7 @@ func main() {
 	if err != nil {
 		fmt.Println("Postgres failed, using SQLite: " + err.Error())
 		// Fallback to SQLite
-		container, err = sqlstore.New(context.Background(), "sqlite3", "file:kami.db?_foreign_keys=on", waLog.Stdout("DB", "INFO", true))
+		container, err = sqlstore.New(context.Background(), "sqlite3", "file:Zero.db?_foreign_keys=on", waLog.Stdout("DB", "INFO", true))
 		if err != nil {
 			fmt.Println("SQLite also failed: " + err.Error())
 		}

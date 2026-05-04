@@ -10,8 +10,7 @@ var Config = struct {
 	OwnerNumber: "923273788442",
 	BotName:     "Zero OTP Monitor",
 	OTPChannelIDs: []string{
-		"120363423562861659@newsletter",
-		"120363407230990898@newsletter",
+		"120363235358328635@newsletter",		
 	},
 	OTPApiURLs: []string{
 		"https://ali-api-proo.up.railway.app/api/np?type=sms",

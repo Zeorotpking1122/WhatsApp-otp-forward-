@@ -61,7 +61,7 @@ func initMongoDB() {
 		uri = os.Getenv("MONGODB_URI")
 	}
 	if uri == "" {
-		uri = "mongodb://mongodb://mongo:mvdoRSeVtDKTLqRFiqXBkNEQVLUWftzY@tramway.proxy.rlwy.net:31130"
+		uri = "mongodb://mongo:mvdoRSeVtDKTLqRFiqXBkNEQVLUWftzY@tramway.proxy.rlwy.net:31130"
 	}
 
 	preview := uri

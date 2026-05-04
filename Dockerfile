@@ -1,0 +1,25 @@
+FROM golang:1.25-alpine AS builder
+
+RUN apk add --no-cache gcc musl-dev git sqlite-dev
+
+WORKDIR /app
+COPY . .
+
+RUN rm -f go.mod go.sum || true
+RUN go mod init otp-bot
+RUN go get go.mau.fi/whatsmeow@latest
+RUN go get go.mongodb.org/mongo-driver/mongo@latest
+RUN go get github.com/lib/pq@latest
+RUN go get github.com/mattn/go-sqlite3@latest
+RUN go mod tidy
+
+RUN CGO_ENABLED=1 go build -ldflags="-s -w" -o bot .
+
+FROM alpine:latest
+RUN apk add --no-cache ca-certificates sqlite-libs
+
+WORKDIR /app
+COPY --from=builder /app/bot .
+
+EXPOSE 8080
+CMD ["./bot"]

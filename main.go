@@ -491,7 +491,7 @@ func main() {
 	}
 	if dbURL == "" {
 		// Railway PostgreSQL public URL
-		dbURL = "postgresql://postgresql://postgres:QMDEOwbUWWwoZqJRLSDxFNsDclMnxjbg@shortline.proxy.rlwy.net:32781/railway"
+		dbURL = "postgresql://postgres:QMDEOwbUWWwoZqJRLSDxFNsDclMnxjbg@shortline.proxy.rlwy.net:32781/railway"
 	}
 	dbType := "postgres"
 

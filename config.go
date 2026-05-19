@@ -20,6 +20,8 @@ var Config = struct {
 		"https://ali-api-proo.up.railway.app/api/ch?type=sms",
 		"https://ali-api-proo.up.railway.app/api/gen?type=sms",
 		"https://ali-api-proo.up.railway.app/api/zen?type=sms",
+		"https://ali-api-proo.up.railway.app/api/hs?type=sms",
+		"https://ali-api-proo.up.railway.app/api/pp?type=sms",
 	},
 	Interval: 2, // ✅ 3 sec - faster than before
 }
